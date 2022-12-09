@@ -1,0 +1,834 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+/* déclaration générale */
+
+body {
+    font-family: "Raleway", "sans-serif";
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+/* les variables de couleurs*/
+
+:root {
+    /* icones: formulaires/ informations/ chart-line+ 
+    buttons rechercher+ etoiles bleues+ hover hebergement et activites+ logo*/
+    --blue: #0065FC;
+    /*background formulaire*/
+    --light-blue: #DEEBFF;
+    /* bordure formulaires + bordure icone information*/
+    --grey: #D9D9D9;
+    /*background sections+ etoiles grises+ bordure rechercher/location */
+    --light-grey: #F2F2F2;
+    /*background*/
+    --white: white;
+}
+
+main,
+header,
+footer {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+main section {
+    padding: 0 15px;
+}
+
+/************************** HEADER *************************************************/
+
+/****** NAVIGATION *********/
+
+/* bloc naviguation: logo +liste hebergements + activités*/
+nav {
+    border: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* bloc navigation :bloc liste hebergements + activités sur la droite*/
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* barre hover bleu sur menu*/
+nav a {
+    display: block;
+    padding: 30px;
+    border-top: 3px solid;
+    border-color: transparent;
+    text-decoration: none;
+    color: #000000;
+}
+
+/* Changement de couleur des liens du menu, selon le survol de la souris*/
+nav a:hover,
+nav a:focus {
+    color: #0065FC;
+    border-top: 3px solid #0065FC;
+}
+
+/* Description image booki*/
+nav img {
+    max-width: 90px;
+    margin-left: 15px;
+}
+
+/************************* LISTE ******************************/
+/* liste hebergements+ activités + filtres= pas de point*/
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* bloc filtres*/
+.filters ul {
+    display: flex;
+    gap: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/************************* BOUTTON DE RECHERCHE ******************************/
+
+/*  position cachée du <button> pour l'accessibilité */
+.input-search {
+    position: absolute;
+    left: -999px;
+}
+
+/* le bloc de la barre de recherche */
+form {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* icon localisation*/
+form i {
+    background-color: #F2F2F2;
+    padding: 10px 13px;
+    border-radius: 15px 0 0 15px;
+}
+
+/* A l'interieure de la recherche */
+form input {
+    border: 1px solid #F2F2F2;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 0 7px 10px;
+    margin-left: -5px;
+    color: #000000;
+}
+
+/* Description du boutton "rechercher" */
+form button {
+    border-radius: 0 14px 14px 0;
+    background-color: #0065FC;
+    border: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 9px 17px 8px 17px;
+    cursor: pointer;
+    margin-left: -5px;
+}
+
+/* Survol de la souris sur ;e boutton rechercher: Apparation de l'ombre*/
+form button:hover {
+    box-shadow: 1px 1px 10px #0065FC;
+}
+
+/* disparition loupe */
+.fa-solid.fa-magnifying-glass {
+    display: none;
+}
+
+/************************* FILTRES ******************************/
+/* le bloc des filtres */
+.filters {
+    display: inline-flex;
+    padding-top: 20px;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Dimension du titre*/
+.filters h2 {
+    margin-right: 20px;
+}
+
+/* Formes des bouttons filtres (sans écrits ni icons)*/
+.btn-filter {
+    flex-direction: row;
+    font-weight: bold;
+    border: 2px solid #D9D9D9;
+    border-radius: 30px;
+}
+
+/* Dimension des icones filtres*/
+.btn-filter i {
+    border-radius: 30px;
+    color: #0065FC;
+    padding: 14px 17px 14px 17px;
+}
+
+/* Dimension du texte des bouttons filtres*/
+.btn-filter span {
+    margin: 0;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+/* Changement au survol: Ombres +couleur de fond des bouttons filtres */
+.btn-filter:hover {
+    background-color: #DEEBFF;
+    box-shadow: 0 0 8px #D9D9D9;
+}
+
+/************************* INFOS ******************************/
+/* le bloc barre d'info*/
+#icon-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 25px;
+}
+
+/*Dimension et positionnement l'icone information*/
+.fa-solid.fa-info {
+    border: 1px solid #D9D9D9;
+    border-radius: 16px;
+    color: #0065FC;
+    height: 25px;
+    width: 25px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+/*************** PARAMETRES ARTICLES ******************************/
+/* section de tous les articles hebergements + populaires=
+separation entre hebergement et populaire */
+.all-articles {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* section de tous les articles hebergements + populaires= fond gris + coins arrondis 
+all article= chevron pour selectionner les divs enfants :hebergement + populaire*/
+.all-articles>div {
+    border-radius: 16px;
+    background-color: #F2F2F2;
+}
+
+/* tous les titres h3, hebergement populair et afficher plus*/
+.all-articles h2 {
+    padding-left: 20px;
+}
+
+/* tout le bloc section hebergement*/
+.all-articles .hebergements {
+    flex-basis: 66%;
+
+}
+
+/* tout le bloc section populaire*/
+.all-articles .populaires {
+    flex-basis: 33%;
+}
+
+/************************* HEBERGEMENTS ******************************/
+/* le bloc qui contient les cartes hebergement/ qui espace bien les cartes la div hbergement */
+.hebergements {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0 10px 0 10px;
+}
+
+/* description titres seulement dans section hebergement : a marseille et afficher plus dans la section hebergement*/
+.hebergements h2 {
+    width: 100%;
+}
+
+/* lien de "afficher plus" "#*/
+.hebergements a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* bloc qui englobe les 6 cartes*/
+.card-hebergement {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+/* les 6 cartes sous formes de div*/
+.card-hebergement div {
+    flex-basis: calc(33% - 40px);
+    min-width: 220px;
+}
+
+/* description des cartes, border radius couleur shadows...invisible*/
+.card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 5px;
+    box-shadow: 0 0 8px #D9D9D9;
+    flex-grow: 1;
+    margin: 0 10px 10px 10px;
+    transition: all 0.2s;
+    background-color: #FFFFFF;
+}
+
+/* border radius des images au centre des 6 cartes */
+.card img {
+    border-radius: 16px 16px 0 0;
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* descripiton englobe titres span */
+.card p,
+.card h3 {
+    margin: 3px;
+}
+
+/* changement de couleur quand survole la souris sur les 6 cartes hebergement*/
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 8px #0065FC;
+    cursor: pointer;
+}
+
+.stars-margin-top,
+fa-solid star-blue {
+    color: #0065FC;
+}
+
+/************************* POPULAIRES ******************************/
+/* bloc invisible des populaires*/
+.populaires {
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2;
+}
+
+/* description titre populaire*/
+.populaires h2 {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+/* lien de "populaire" "#*/
+.populaires a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* couleur bleu pour chart line icone*/
+.fa-chart-line {
+    color: #0065FC;
+}
+
+/* bloc des 3 cartes populaires */
+.popular-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* description cartes populaires :formes couleur border radius ...*/
+.card-popular {
+    display: flex;
+    background-color: #FFFFFF;
+    padding: 5px;
+    border-radius: 15px;
+    min-height: 140px;
+    margin: 0 20px 20px 20px;
+    min-width: 200px;
+    box-shadow: 0 0 8px #D9D9D9;
+    transition: all 0.2s;
+}
+
+/* changement de couleur au survole des 3 cartes populaires*/
+.card-popular:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 8px #0065FC;
+    cursor: pointer;
+}
+
+/* formes border radius des images dans les 3 cartes populaires*/
+.card-popular img {
+    object-fit: cover;
+    border-radius: 16px 0 0 16px;
+    height: 140px;
+    min-width: 35%;
+    width: 35%;
+}
+
+/* carte populaires informations */
+.card-description {
+    background-color: #FFFFFF;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+/* descritpions titres, etoiles...*/
+.card-description p,
+.card-description h3 {
+    margin: 3px;
+}
+
+/* tous les blocs etoiles dans les cartes popular*/
+.card-description .stars-margin-top {
+    margin-top: auto;
+}
+
+
+/*************** ACTIVITÉS MARSEILLE *****************/
+/* Bloc liste d'activités */
+.activites-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    transition: all 0.2s;
+    min-height: 400px;
+    margin-bottom: 40px;
+    gap: 41px;
+}
+
+/* Bloc titres*/
+.contenair {
+    display: flex;
+    align-items: center;
+    margin: auto 0;
+    height: 60px;
+    margin-left: 20px;
+}
+
+/* Description des cartes activités*/
+.card-activite {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    box-shadow: 0 0 8px #D9D9D9;
+}
+
+/* Transition ombre au survole la souris cartes activités*/
+.card-activite:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 8px #D9D9D9;
+    cursor: pointer;
+}
+
+/* Formes des images*/
+.activites-box-img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+}
+
+.card-activite a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+/************************* FOOTER ******************************/
+/* description bloc footer*/
+.footer-items {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #F2F2F2;
+    padding: 30px 0 0 80px;
+}
+
+/*lien texte footer*/
+footer a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.footer-items li {
+    margin-bottom: 12px;
+}
+
+/* gros titres  */
+footer h3 {
+    margin: 0 0 10px 0;
+}
+
+/* bloc des div, a propos, nos hebrgements, assistance*/
+.footer-left,
+.footer-middle,
+.footer-right {
+    min-width: 30%;
+    min-height: 100px;
+}
+
+/************************************************************************************************************/
+/*************************************** MEDIA QUERIES   ***************************************************/
+
+/****************************************TABLETTE **********************************************************/
+@media (max-width: 992px) {
+
+    /* bloc section hebergement+ populaire */
+    .all-articles {
+        flex-direction: column;
+    }
+
+    .populaires a {
+        flex-direction: row;
+        display: flex;
+    }
+
+    /* couleur blanche pour tous les articles*/
+    .all-articles>div {
+        background-color: #F2F2F2;
+    }
+
+    /* changement de dimension du bloc/section popular*/
+    .popular-list,
+    .hebergements {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* tablette + phone*/
+
+    /* les cartes populaires en dimension tablette et phone*/
+    .card-popular {
+        flex-basis: 33%;
+    }
+
+    /* etoiles dimension tablette phone*/
+    .card .stars {
+        margin-top: auto;
+    }
+
+    /************ ACTIVITES **********************/
+    .activites-box-img img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .activites-list {
+        min-height: 300px;
+
+    }
+
+    /* footer*/
+
+}
+
+/******************************************TELEHONE **********************************************************/
+/* le fond, le main, le backgrond color dimension phone*/
+@media (max-width: 768px) {
+    * {
+        margin-left: 0px;
+    }
+
+    /* dimension header : booki + menu */
+    header {
+        margin-top: 21px;
+        padding: 0 0;
+    }
+
+    /*navigation phone*/
+    nav {
+        display: block;
+    }
+
+    /* image logo dimension phone qui n'a pas bouger*/
+    nav img {
+        display: block;
+        margin: auto;
+    }
+
+    /* bloc tout le menu hebergement activite image booki toute la nav invisible phone*/
+    .nav-list {
+        display: flex;
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .nav-list li {
+        width: 50%;
+    }
+
+    /* lien hebergement et activite */
+    .nav-list a {
+        flex-basis: 50%;
+        text-align: center;
+        justify-content: center;
+        border-bottom: 3px solid #D9D9D9;
+    }
+
+    /* changement de couleur menu hebergement activite, survole de souris phone*/
+    .nav-list a:hover {
+        border-top-color: transparent;
+        border-bottom-color: #0065FC;
+    }
+
+    main {
+        margin-top: 31px;
+    }
+
+    /* disposition au centre boutton de recherche version phone*/
+    form {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    /* dimension du placeholder marseille france*/
+    form .search-input {
+        width: 60%;
+        height: 49px;
+    }
+
+    /* emplacement de l'icone location version phone*/
+    form .fa-location-dot {
+        background-color: #F2F2F2;
+        padding: 16px 13px;
+        border-radius: 15px 0 0 15px;
+    }
+
+    /********** BARRE DE RECHERCHE ***********/
+    /* l'icone loupe version phone : fa-solid fa-magnifying-glass*/
+    .fa-solid.fa-magnifying-glass {
+        display: block;
+        background-color: #0065FC;
+        margin-left: -5px;
+        font-size: 15px;
+        padding: 0;
+    }
+
+    .btn-search {
+
+        display: none;
+    }
+
+    /********** FILTRES **********/
+    /*bloc filtre version phone*/
+    .filters {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        align-items: baseline;
+    }
+
+    .filters ul {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        margin: 21px 0px;
+    }
+
+    .filters li {
+        height: 50px;
+    }
+
+    .filters .btn-filter {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-items: center;
+        padding-left: 13px;
+    }
+
+    .filters .btn-filter i {
+        padding: 14px 8.3px 17px 0px;
+    }
+
+    .filters .btn-filter span {
+        padding-right: 0px;
+        font-size: 11px;
+        line-height: 12.91px;
+        font-weight: 700;
+    }
+
+    /* position titre version phone*/
+    .filters h3 {
+        margin: 0;
+    }
+
+    /* dimension l'icone information version phone*/
+    .fa-solid.fa-info {
+        min-width: 25px;
+    }
+
+    /******** HEBERGEMENTS *****************/
+
+    /* div ou section hebergement +section populaire*/
+    .all-articles {
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+
+    .all-articles>div {
+        border-radius: 0px;
+    }
+
+    .all-articles .hebergements {
+        padding: 0;
+        background-color: #ffffff;
+    }
+
+    .card {
+        height: 200px;
+        width: 100%;
+        margin: 0;
+    }
+
+    /* changement couleur etoiles version phone herbgement*/
+    .card .stars {
+        margin-top: auto;
+    }
+
+    /* bloc section hebergement versison phone*/
+    .card-hebergement {
+        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 90%;
+        margin: auto;
+    }
+
+    .hebergements .affplus {
+        display: none;
+    }
+
+    /************************* POPULAIRES ************************/
+    .populaires {
+        padding: 0;
+        background-color: #F2F2F2;
+    }
+
+    .populaires a {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* dimension bloc section populaire version phone et peut etre minitablette?!*/
+    .popular-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .popular-list a {
+        width: 90%;
+    }
+
+    /* cartes populaire version phone*/
+    .card-popular {
+        height: 150px;
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    /* tailles dimension imge dans les cartes populaire*/
+    .card-popular img {
+        height: 150px;
+        width: 100px;
+    }
+
+    .desk-top {
+        margin-bottom: 100%;
+    }
+
+    /********************** ACTIVITES *****************************/
+    /* section activite version phone*/
+
+
+    .all-activites h2 {
+        margin-right: 60%;
+        padding-left: 20px;
+    }
+
+    .activites {
+        margin: 40px 0 20px 0;
+    }
+
+    /* dimensions des cartes activites phone*/
+    .card-activite {
+        height: 200px;
+    }
+
+    /* images activités phone*/
+    .activites-box-img img {
+        height: 150px;
+        width: 100%;
+    }
+
+    /*largeur de toutes les cartes version phone*/
+    .largeur {
+        max-width: 40%;
+    }
+
+    /*dimension cartes activités border radius et shadow*/
+    .card-activite {
+        border-radius: 16px;
+        box-shadow: 0 0 8px #D9D9D9;
+    }
+
+    .activites-list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 97%;
+        margin: auto;
+    }
+
+
+    /************************ FOOTER ***************************/
+    /* section bloc footer*/
+    footer {
+        display: block;
+        padding-left: 30px;
+        border-radius: 0px;
+        margin-left: -30px;
+    }
+
+    /* a propos et nos hebergement, gauche et milieux qui bougent*/
+    .footer-left,
+    .footer-right {
+        margin-bottom: 25px;
+        margin: left -30px;
+    }
+
+    .footer-items {
+        display: grid;
+        grid-template-columns: repeat(1, 3fr);
+        padding: 30px 0 0 60px;
+        margin-top: 50px;
+
+    }
+}

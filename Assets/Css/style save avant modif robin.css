@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+/* déclaration générale */
+
+body {
+    font-family: "Raleway", "sans-serif";
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+/* les variables de couleurs*/
+
+:root {
+    /* icones: formulaires/ informations/ chart-line+ 
+    buttons rechercher+ etoiles bleues+ hover hebergement et activites+ logo*/
+    --blue: #0065FC;
+    /*background formulaire*/
+    --light-blue: #DEEBFF;
+    /* bordure formulaires + bordure icone information*/
+    --grey: #D9D9D9;
+    /*background sections+ etoiles grises+ bordure rechercher/location */
+    --light-grey: #F2F2F2;
+    /*background*/
+    --white: white;
+}
+
+main,
+header,
+footer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/**************************    HEADER     *************************************************/
+/****** NAV *********/
+
+/* bloc naviguation: logo +liste hebergements + activités*/
+nav {
+    border: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* bloc navigation :bloc liste hebergements + activités sur la droite*/
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+/* barre hover bleu sur menu*/
+nav a {
+    display: block;
+    padding: 30px;
+    border-top: 3px solid;
+    border-color: transparent;
+    text-decoration: none;
+    color: #000000;
+}
+
+/* Changement de couleur des liens du menu, selon le survol de la souris*/
+nav a:hover,
+nav a:focus {
+    color: #0065FC;
+    border-top: 3px solid #0065FC;
+}
+
+/* Description image booki*/
+nav img {
+    max-width: 120px;
+    margin-left: 15px;
+}
+
+/************************* LISTE ******************************/
+/* liste hebergements+ activités + filtres= pas de point*/
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* bloc filtres*/
+.filters ul {
+    display: flex;
+    gap: 20px;
+}
+
+/************************* SEARCH BUTTON ******************************/
+
+/*  position cachée du <button> pour l'accessibilité */
+.input-search {
+    position: absolute;
+    left: -999px;
+}
+
+/* le bloc de la barre de recherche */
+form {
+    display: inline-block;
+    width: 100%;
+}
+
+/* icon localisation*/
+form i {
+    background-color: #F2F2F2;
+    padding: 10px 13px;
+    border-radius: 15px 0 0 15px;
+}
+
+/* A l'interieure de la recherche */
+form input {
+    border: 1px solid #F2F2F2;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 0 7px 10px;
+    margin-left: -5px;
+    color: #000000;
+}
+
+/* Description du boutton "rechercher" */
+form button {
+    border-radius: 0 14px 14px 0;
+    background-color: #0065FC;
+    border: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 9px 17px 8px 17px;
+    cursor: pointer;
+    margin-left: -5px;
+}
+
+/* Survol de la souris sur ;e boutton rechercher: Apparation de l'ombre*/
+form button:hover {
+    box-shadow: 1px 1px 10px #0065FC;
+}
+
+/************************* FILTERS ******************************/
+/* revoir cette partie*/
+
+/* le bloc des filtres */
+.filters {
+    display: inline-flex;
+    padding-top: 18px;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* Dimension du titre*/
+.filters h2 {
+    margin-right: 20px;
+}
+
+/* Formes des bouttons filtres (sans écrits ni icons)*/
+.btn-filter {
+    flex-direction: row;
+    font-weight: bold;
+    border: 2px solid #D9D9D9;
+    border-radius: 30px;
+
+}
+
+
+/* Dimension des icones filtres*/
+.btn-filter i {
+    border-radius: 30px;
+    color: #0065FC;
+    padding: 14px 17px 14px 17px;
+}
+
+/* Dimension du texte des bouttons filtres*/
+.btn-filter span {
+    margin: 0;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+
+/* Changement au survol: Ombres +couleur de fond des bouttons filtres */
+.btn-filter:hover {
+    background-color: #DEEBFF;
+    box-shadow: 0 0 8px #D9D9D9;
+}
+
+/************************* INFOS ******************************/
+
+/* le bloc barre d'info*/
+#icon-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/*Dimension et positionnement l'icone information*/
+.fa-solid.fa-info {
+    border: 1px solid #D9D9D9;
+    border-radius: 16px;
+    color: #0065FC;
+    height: 25px;
+    width: 25px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+/************************* SECTION: HEBERGEMENTS + POPULAIRES ******************************/
+
+/* section hebergements+populaires*/
+.all-articles {
+    display: flex;
+    gap: 20px;
+}
+
+/* Section hebergements */
+.all-articles>article {
+    border-radius: 16px;
+    background-color: #F2F2F2;
+    padding: 0 10px 0 10px;
+    flex-basis: 66%;
+}
+
+/* Tous les titres h2, article hebergements + aside populars + afficher plus*/
+.all-articles h2 {
+    padding-left: 20px;
+}
+
+/* Bloc section populaire*/
+.populaires {
+    flex-basis: 33%;
+}
+
+
+/************** ARTICLES: HEBERGMENTS *********/
+
+/* Description titres section hebergement+ afficher+*/
+.hebergements h2 {
+    width: 100%;
+}
+
+/* lien de "afficher+" */
+.article a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Bloc englobant les 6 cartes*/
+.liste-hebergement ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+/* Les 6 cartes */
+.card-hebergement {
+
+    min-width: 220px;
+}
+
+/* Description des cartes (images,ombres, positionnement,transition changement couleur)*/
+.card-hebergement-image {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 5px;
+    box-shadow: 0 0 8px #D9D9D9;
+    flex-grow: 1;
+    margin: 0 10px 10px 10px;
+    transition: all 0.2s;
+}
+
+/* Formes et fonctionnalitée des images des 6 cartes */
+.card img {
+    border-radius: 16px 16px 0 0;
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Description titres et étoiles*/
+.card p,
+.card h3 {
+    margin: 5px;
+}
+
+/* Mouvement et ombres quand survole la souris sur les 6 cartes hebergement*/
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 8px #D9D9D9;
+    cursor: pointer;
+}
+
+/* Bloc etoiles */
+.card .stars {
+    margin-top: auto;
+}
+
+/********** ARTICLES: POPULAIRES ***************/
+
+/* Bloc cartes populaires*/
+.populaires {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    background-color: #F2F2F2;
+}
+
+/* Description titre populaire*/
+.populaires h2 {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+/* Bloc des 3 cartes populars*/
+.popular-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Description formes/couleurs/positionnement/transition ombre des 3 cartes populars*/
+.card-popular {
+    display: flex;
+    background-color: #FFFFFF;
+    padding: 5px;
+    border-radius: 15px;
+    min-height: 140px;
+    margin: 0 20px 20px 20px;
+    min-width: 200px;
+    box-shadow: 0 0 8px #D9D9D9;
+    transition: all 0.2s;
+}
+
+/* Mouvement et ombres quand survole la souris sur les 3 cartes populars*/
+.card-popular:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 8px #D9D9D9;
+    cursor: pointer;
+}
+
+/* Formes et dispositions des images dans les cartes populaires*/
+.card-popular img {
+    object-fit: cover;
+    border-radius: 16px 0 0 16px;
+    height: 140px;
+    min-width: 35%;
+    width: 35%;
+}
+
+/* Descripiton des cartes internes (écrits+étoiles)*/
+.card-description {
+    background-color: #FFFFFF;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+/* Descritpions titres, étoiles*/
+.card-description p,
+.card-description h3 {
+    margin: 3px;
+}
+
+/* Blocs des étoiles dans chaques cartes poplaires*/
+.card-description .stars-margin-top {
+    margin-top: auto;
+}
+
+/* couleurs étoiles*/
+
+.star-blue,
+.star-grey {
+    background-color: inherit;
+}
+
+/* etoiles bleus*/
+.star-blue {
+    color: #0065FC;
+}
+
+.star-grey {
+    color: #F2F2F2;
+}
+
+
+/*************** ACTIVITÉS À MARSEILLE *****************/
+
+/* Bloc activités marseilles englobant les cartes et le titre*/
+.activites {
+    margin: 20px 10px 20px 10px;
+}
+
+/* Bloc liste d'activités */
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    transition: all 0.2s;
+    min-height: 400px;
+}
+
+/* Bloc titres*/
+.contenair {
+    display: flex;
+    align-items: center;
+    margin: auto 0;
+    height: 60px;
+    margin-left: 20px;
+}
+
+/* Bloc images divisé en 2 : Pomègue+Frioul / NDG+Longchamps*/
+.dual-card,
+.dual-card50 {
+    display: flex;
+    flex-basis: 25%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Largeur des cartes activités*/
+.largeur {
+    max-width: 350px;
+    min-width: 200px;
+}
+
+/* Description des cartes activités*/
+.activites {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 22%;
+    border-radius: 16px;
+    box-shadow: 0 0 8px #D9D9D9;
+}
+
+/* Transition ombre au survole la souris cartes activtiés*/
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 8px #D9D9D9;
+    cursor: pointer;
+}
+
+/* Formes des images*/
+.card {
+    width: 100%;
+    height: 10em;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+}
+
+/***************** HAUTEUR DE LA CARTE ****************/
+
+/*Dimension des 2 grandes cartes :Vieux Port et Calanques*/
+.card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/************************ FOOTER ************************/
+
+/* Description bloc footer*/
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #F2F2F2;
+    gap: 2.5em;
+    padding: 2.5em;
+}
+
+/* Lien texte footer*/
+footer a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* Titres: A propos / Nos hebergement/ Assistance */
+footer h4 {
+    margin: 0 0 10px 0;
+}
+
+/* Bloc des titres*/
+.footer-left,
+.footer-middle,
+.footer-right {
+    min-width: 30%;
+    min-height: 100px;
+}
+
+/* grid*/
